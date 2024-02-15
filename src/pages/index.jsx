@@ -17,6 +17,7 @@ import logoStarbucks from '@/images/logos/starbucks.svg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import backdrop from '@/images/backdrop.jpg'
 
 // icons for right corner section of the home page
 function MailIcon(props) {
@@ -213,7 +214,7 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="/manikonda_shraddha_rao.pdf" download="CV.pdf" variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -274,10 +275,11 @@ export default function Home({ articles }) {
           </div>
         </div>
       </Container>
-      {/* <Photos /> */}
       {//Iteration of blogs
       }
       <Container className="mt-24 md:mt-28">
+      <Image src={backdrop} alt={backdrop} />
+      <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl my-10'> Perspectives & Proficiencies </h1>
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (

@@ -162,6 +162,8 @@ function NavItem({ href, children }) {
   )
 }
 
+// for desktop navigation
+
 function DesktopNavigation(props) {
   return (
     <nav {...props}>

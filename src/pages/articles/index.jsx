@@ -38,24 +38,28 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Articles - Spencer Sharp</title>
+        <title>Blogs - Shraddha Rao</title>
         <meta
           name="description"
-          content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+          content="Welcome to my digital diary, where I share insights, musings, and adventures from my coding escapades. Dive into a world of technology, creativity, and problem-solving as I navigate through the ever-evolving landscape of software engineering. "
         />
       </Head>
       <SimpleLayout
-        title="Writing on software design, company building, and the aerospace industry."
-        intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+        title="Code Chronicles"
+        intro="Welcome to my digital diary, where I share insights, musings, and adventures from my coding escapades. Dive into a world of technology, creativity, and problem-solving as I navigate through the ever-evolving landscape of software engineering."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-          <div className="flex max-w-3xl flex-col space-y-16">
+          <div className="flex max-w-3xl flex-col space-y-16 my-12">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
           </div>
+          <a className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded" href="https://medium.com/@shraddharao_">
+      Find more blogs
+      </a>
         </div>
       </SimpleLayout>
+
     </>
   )
 }
