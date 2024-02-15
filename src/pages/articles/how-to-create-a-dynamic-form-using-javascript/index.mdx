@@ -1,0 +1,161 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/future/image'
+import form from './form.png'
+
+export const meta = {
+  author: 'Shraddha Rao',
+  date: '2022-10-25',
+  title: 'How to create a dynamic form using JavaScript',
+  description:
+    'Hello readers, this blog will guide you through creating an “Idea submission form” as an example of creating any kind of dynamic form using DOM manipulation and JavaScript.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Hello readers, this blog will guide you through creating an “Idea submission form” as an example of creating any kind of dynamic form using DOM manipulation and JavaScript.
+
+Here’s a prototype of what the outcome would look like —
+
+<Image src={form} alt="Idea submission form" />
+[Replit-Idea submission form](https://replit.com/@Limeload/Creating-a-dynamic-form-using-JavaScript?v=1)
+
+
+* Create an `index.html` file —
+It must include `DOCTYPE`, `head`, `title`, and `body`. Add a heading as “Idea submission form. Make sure to add a `<div>` tag inside the body with an id as `“form-structure”` — this is where the form will be created dynamically.
+
+```js
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Creating a dynamic form using JavaScript</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1> Idea submisson form </h1>
+<script src="script.js"></script>
+<div id ="form-structure"> </div>
+  <script src="index.js" defer></script>
+</body>
+</html>
+```
+
+* In the `index.js` file —
+Using DOM manipulation, create a form element and set its attribute with a method and action and then use document interface to return the form element in HTML. Here, I have used `getElementByTagName` method to find the `<div id =”form-structure”> </div>` inside the body tag.
+
+```js
+let form = document.createElement("form");
+form.setAttribute("method", "post");
+form.setAttribute("action" , "submit");
+document.getElementsByTagName("body")[0].appendChild(form);
+```
+Create a `label` element for each input starting with name, email, department, idea, description and button
+
+```js
+let nameTag = document.createElement('label');
+let emailTag = document.createElement('label');
+let departmentTag = document.createElement('label');
+let ideaTag = document.createElement('label');
+let descriptionTag = document.createElement('label');
+let btnTag = document.createElement('label');
+```
+
+Now, create an `input` element for user’s first name and last name. Use the `label` element to append to its input element. Make sure to create a HTML content to your label variable.
+
+```js
+let firstName = document.createElement("input");
+firstName.setAttribute("placeholder", "First Name");
+nameTag.innerHTML = "Name";
+firstName.appendChild(nameTag);
+let lastName = document.createElement("input");
+lastName.setAttribute("placeholder", "Last Name");
+```
+
+Similarly, create an `input` element for user’s email adresss with an attribute of a placeholder that has an example of an email address.
+
+```js
+let email = document.createElement("input");
+email.setAttribute("placeholder", "example@gmail.com");
+emailTag.innerHTML = "Email";
+email.appendChild(emailTag);
+```
+
+Before creating a `select` element for Department, create an array of different types of department that a user can select from a dropdown list.
+
+```js
+let departmentData = [
+  "Please Select",
+  "Human resources",
+  "IT", "Accounting and Finance",
+  "Marketing",
+  "Research and Development",
+  "Production"];
+```
+Use `forEach()` method to call a function for each element in an array which in this case is departmentData.
+
+
+```js
+let department = document.createElement("select");
+departmentData.forEach(function(val) {
+  let option = document.createElement("option");
+  option.innerHTML = val;
+  department.appendChild(option);
+})
+departmentTag.innerHTML = "Department";
+department.appendChild(departmentTag);
+```
+
+Create an `input` and a `textarea` element to add the Subject of the idea and Description of the idea respectively.
+
+```js
+let idea = document.createElement("input");
+ideaTag.innerHTML = "Subject of the idea";
+idea.appendChild(ideaTag);
+let description = document.createElement("textarea");
+descriptionTag.innerHTML = "Description of the idea";
+description.setAttribute("placeholder", "Type here...");
+description.appendChild(descriptionTag);
+```
+
+Lastly, create a button to submit the form.
+
+```js
+let submitBtn = document.createElement("button");
+btnTag.innerHTML = "Submit";
+submitBtn.appendChild(btnTag);
+```
+
+Append all these elements to the form and create a `br` element to create a line break between each elements.
+
+```js
+let br = document.createElement("br");
+form.appendChild(nameTag);
+form.appendChild(br.cloneNode());
+form.appendChild(firstName);
+form.appendChild(lastName);
+form.appendChild(br.cloneNode());
+form.appendChild(emailTag);
+form.appendChild(br.cloneNode());
+form.appendChild(email);
+form.appendChild(br.cloneNode());
+form.appendChild(departmentTag);
+form.appendChild(br.cloneNode());
+form.appendChild(department);
+form.appendChild(br.cloneNode());
+form.appendChild(ideaTag);
+form.appendChild(br.cloneNode());
+form.appendChild(idea);
+form.appendChild(br.cloneNode());
+form.appendChild(descriptionTag);
+form.appendChild(br.cloneNode());
+form.appendChild(description);
+form.appendChild(br.cloneNode());
+form.appendChild(submitBtn);
+form.appendChild(br.cloneNode());
+```
+
+* Once the form is created, you can style each element as you like in `index.css` file.
+
+
+Hope you had fun learning and creating a form, you can also experiment adding a username and a password feature, radio buttons that select only one option from the list, Date of birth in a calendar format and many other things inside a form that can be created dynamically with javaScript.
