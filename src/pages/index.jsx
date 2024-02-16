@@ -10,10 +10,8 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import streamoid from '@/images/logos/streamoid.png'
+import patientstudio from '@/images/logos/patientstudio.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
@@ -139,36 +137,36 @@ function Newsletter() {
 
 function Resume() {
   let resume = [
+    // {
+    //   company: 'Planetaria',
+    //   title: 'CEO',
+    //   logo: logoPlanetaria,
+    //   start: '2019',
+    //   end: {
+    //     label: 'Present',
+    //     dateTime: new Date().getFullYear(),
+    //   },
+    // },
+    // {
+    //   company: 'Airbnb',
+    //   title: 'Product Designer',
+    //   logo: logoAirbnb,
+    //   start: '2014',
+    //   end: '2019',
+    // },
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      company: 'PatientStudio',
+      title: 'UI engineer intern',
+      logo: patientstudio,
+      start: '2021',
+      end: '2022',
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'Streamoid Technologies',
+      title: 'Fashion consultant',
+      logo: streamoid,
+      start: '2018',
       end: '2019',
-    },
-    {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
     },
   ]
 
