@@ -53,11 +53,13 @@ export default function ArticlesIndex({ articles }) {
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
-          </div>
-          <a className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded" href="https://medium.com/@shraddharao_">
+            <a className="relative z-10 mt-4 flex item-center text-sm font-medium text-teal-500" href="https://medium.com/@shraddharao_">
       Find more blogs
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 m-1.5 stroke-current"><path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
+          </div>
         </div>
+
       </SimpleLayout>
 
     </>
