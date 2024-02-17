@@ -256,7 +256,7 @@ export default function Home({ articles }) {
               icon={TwitterIcon}
             />
             <SocialLink
-              href="https://instagram.com"
+              href="https://instagram.com/shraddharao_"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
